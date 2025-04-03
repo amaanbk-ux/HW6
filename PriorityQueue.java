@@ -1,7 +1,6 @@
-
 /******************************************************************
  *
- *   YOUR NAME / SECTION NUMBER
+ *   Amaan Khan / 001
  *
  *   Note, additional comments provided throughout this source code
  *   is for educational purposes
@@ -150,9 +149,10 @@ class PriorityQueue<E, P> {
      */
 
     public Node add(E e, P priority) {
-
-        // YOUR CODE GOES HERE
-        return null;
+        Node insert = new Node(e,priority, tree.size());
+        tree.add(insert);
+        pullUp(tree.size()-1);
+        return insert;
     }
 
 
@@ -167,9 +167,11 @@ class PriorityQueue<E, P> {
      */
 
     public boolean contains(E e) {
-
-        // ADD YOUR CODE HERE
-        return false;
+        for (Node node : tree){
+            if (node.value.equals(e))
+                return true;
+        }
+       return false;
     }
 
 
